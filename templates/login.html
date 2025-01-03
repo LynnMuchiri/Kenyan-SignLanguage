@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-  <title>Flask Template</title>
+  <title>Login</title>
   </head>
 
   <body>
@@ -33,11 +33,11 @@
               <div id="password-error-message" class="error-msg"></div>
             </div>
 
-            <div id="sign-in-btn" class="login-btn">Sign In</div>
+            <div id="sign-in-btn" class="login-btn">Log In</div>
 
-            <div class="alt-signin-divider">OR</div>
+            <div class="alt-signin-divider">OR</div> 
 
-
+ 
             <button id="sign-in-with-google-btn" class="google-login-btn">
               <img src="{{ url_for('static', filename='images/google-icon.png') }}" alt="Google Sign-in" class="google-btn-logo">
               Sign in with Google</button>
@@ -53,8 +53,6 @@
       </div>
 
     </main>
-
-    {% include 'footer.html' %}
 
     <script src="{{ url_for('static', filename='login-auth.js') }}" type="module"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}" type="module"></script>

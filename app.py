@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, make_response, session, abort, jsonify, url_for
+from flask import Flask, redirect, render_template, request, make_response, session, abort, jsonify, url_for, Response
 import secrets
 from functools import wraps
 import firebase_admin

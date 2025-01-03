@@ -20,27 +20,27 @@
     
     --element-padding: 0.8em;
     
-    --maximum-width: 320px;
+    --maximum-width: 150px;
 }
 
 html, body {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 15px;
+    box-sizing: border-box;
 }
 
 body {
-    color: var(--dark-color);
-    background-color: var(--primary-color);
+    background-color:#dadbd8;;
     font-family: var(--primary-font);
-    height: 100vh;
+    min-height:100vh;
+    
 }
 
 main {
     padding: 2rem;
     height: 100vh;
 }
-
 
 
 
@@ -62,9 +62,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    background-color: #dadbd8;
     color: black;
-    box-shadow: 0px 8px 16px -4px rgba(128, 128, 128, 0.2);
+    /* box-shadow: 0px 8px 16px -4px rgba(128, 128, 128, 0.2); */
 
 
     width: 100%;
@@ -73,7 +73,7 @@ main {
 
 .logo-img {
     width: 80px;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 .logo {
@@ -96,9 +96,77 @@ main {
     margin-right: 2rem;
 }
 
+.navbar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -6px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+ 
+}
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    transform: scaleX(1);
+}
+.navbar a:hover:after{
+    transform: scaleX(1);
+}
+section{
+    padding: 0 14%;
+}
+.hero{
+    position: relative;
+    width: 50%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+.hero-img img{
+    width: 120%;
+    height: auto;
+    margin-left: 100%;
+}
+.hero-text h1{
+    font-size: 50px;
+    font-weight: 900;
+    margin: 15px 0;
+}
+.hero-text p{
+    width: 100%;
+    max-width: 620px;
+    font-size: medium;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 40px;
+}
+.main-hero{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    display: inline-block;
+    padding: 13px 32px;
+    background-color: #DAD5D1;
+    border: 2px solid dimgray;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .6s ease;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.btn:hover{
+    transform: scale(1.1);
 }
 
 
@@ -159,6 +227,7 @@ main {
 
 
 
+
 /* === Buttons === */
 
 button {
@@ -197,9 +266,6 @@ input, button {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-
 }
 
 .login-form-container {
@@ -208,10 +274,10 @@ input, button {
     /* align-items: center;  */
     width: 100%;
     max-width: 400px;
-    background: white;
+    background: #dadbd8;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     margin-top: 2rem;
 }
 
@@ -225,6 +291,7 @@ input, button {
 .login-form h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: dimgray;
 }
   
 .input-group {
@@ -256,8 +323,8 @@ input, button {
 }
 
 .login-btn {
-    background-color: #007bff;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: dimgray;
+    border: none;
     font-weight: 500;
     color: white;
     cursor: pointer;
@@ -299,6 +366,14 @@ input, button {
 .signup-link-container {
     text-align: center;
     margin-top: 1em;
+    color: black;
+}
+.signup-link-container a{
+    text-decoration: none;
+    color: dimgray;
+}
+.signup-link-container a:hover{
+    text-decoration: underline;
 }
 
 .error-msg {
@@ -332,12 +407,13 @@ input, button {
 /* Footer Styles */
 
 footer {
-    background-color: var(--grey-color); /* Light grey background */
+    background-color: dimgray; /* Light grey background */
     color: white; /* Dark grey text */
     font-family: var(--primary-font);
     text-align: center; /* Centering the content */
-    padding: 10px 0; /* Padding above and below */
+    padding: 2px; /* Padding above and below */
     font-size: 14px; /* Standard font size */
+    margin-top: 5%;
 }
 
 .simple-footer {
@@ -363,10 +439,6 @@ footer {
 
 /* Responsive */
 @media screen and (max-width: 600px) {
-
-
-
-
     .navbar-right {
         position: fixed; 
         top: 0;
